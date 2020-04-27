@@ -3,8 +3,8 @@
 *App Inventor, Massachusetts Institute of Technology(MIT) tarafından geliştirilen, programlama konusunda tecrübesi olmayan kimselerin kullanması için yapılmış olan ve Android uygulaması geliştirmesine olanak sağlayan bir uygulama geliştirme platformudur. En önemli özelliği drag and drop yani sürükle ve bırak şeklinde programlanabilmesidir.
 NOT: Uygulamaya girebilmek için gmail hesabı gerekmektedir.*
 ##### *Nasıl Giriş Yapılır?*
-*AppInventor’a giriş yapabilmek için http://appinventor.mit.edu/ adresinden, üstteki menüde bulunan 'create appss!' sekmesine tıklamamız gerekmekte.*
-*Bu sekmeye tıkladıktan sonra site bizi http://ai2.appinventor.mit.edu/ adresinde yönlendiriyor ve buradan google hesabımız ile giriş yapmamızı istiyor. Giriş yaptıktan sonra verilen uyarıya 'izin ver' diyerek geçebilirsiniz.
+*AppInventor’a giriş yapabilmek için http://appinventor.mit.edu/ adresinden, üstteki menüde bulunan **'create appss!'** sekmesine tıklamamız gerekmekte.*
+*Bu sekmeye tıkladıktan sonra site bizi http://ai2.appinventor.mit.edu/ adresinde yönlendiriyor ve buradan google hesabımız ile giriş yapmamızı istiyor. Giriş yaptıktan sonra verilen uyarıya **'izin ver'** diyerek geçebilirsiniz.
 İzni verdikten karşımıza çıkacak olan ekran bizim proje oluşturma ekranımız olup daha önce oluşturduğumuz projelere bu ekrandan ulaşabiliriz.*
 *Start New Project butonuna basılıp ve bir proje ismi girip OK butonuna tıklıyoruz.
 Karşımıza çıkacak ekran 5 parçaya ayrılmış durumdadır. Bunlar;*
@@ -14,7 +14,7 @@ Karşımıza çıkacak ekran 5 parçaya ayrılmış durumdadır. Bunlar;*
 4. *Media: Kullanacağımız ses, fotoğraf gibi dosyaların yükleneceği yer.*
 5. *Properties: Eklediğimiz nesnelerin ayarları ile bu kısımdan oynayabiliriz. Örneğin bir buton eklediğimizde, butonun üzerindeki yazıyı, boyutunu veya rengini buradan değiştirebiliriz.*
 
-*Sağ üst kısımda designer/block isminde iki buton bulunmaktadır. Bu butonlardan designer kısmı şuana kadar gördüğümüz kısımken block kısmı ise parçaları birleştirerek, kodlama yaptığımız kısımdır. Buradan, kontrol yapılarını, mantıksal işlemleri, matematiksel işlemleri yapabiliriz.*
+*Sağ üst kısımda **designer/block** isminde iki buton bulunmaktadır. Bu butonlardan designer kısmı şuana kadar gördüğümüz kısımken block kısmı ise parçaları birleştirerek, kodlama yaptığımız kısımdır. Buradan, kontrol yapılarını, mantıksal işlemleri, matematiksel işlemleri yapabiliriz.*
    
 *Burada Block kısmı, kodlama yaparken birbiri ile birleştireceğimiz tüm blokların bulunduğu kısımdır. Media kısmı designer kısmı ile aynı işlevde olup Viewer kısmı ise blokların sürüklenip birbirleri ile birleştirildiği kısımdır.
 Uygulama hazırlanıp deneme aşamasına gelindiğinde Android telefonlarda QR kodu okutturmak için öncelikle, https://play.google.com/store/apps/details?id=edu.mit.appinventor.aicompanion3 adresinden MIT AI2 Companion isimli uygulamayı indirmemiz gerekiyor.*
@@ -26,7 +26,8 @@ Uygulama hazırlanıp deneme aşamasına gelindiğinde Android telefonlarda QR k
 *Emulatörü bilgisayara yükledikten sonra açmamız ve web ara yüzünden Connect-Emulator seçeneğini seçmemiz gerekiyor. Emulator seçeneği seçildikten 1-2 dakika içerisinde uygulamamız sanal olarak çalışmaya başlayacaktır.*
 ________________________________________________________________________________________________________________________________________
 #### *Proje Dosyasını Çalıştırma*
-*App Inventor ana sayfasında üst kısımda bulunan 'My Projects' seçeneğine tıklayınca birkaç işlem seçeneği ile karşılaşırız. bunlardan 'Import project (.aia) from my computer ...' seçeneğini seçtikten sonra bilgisayarınızdan indirmiş olduğunuz .rar dosyası içerisindeki .aia uzantılı dosyayı seçerek çalıştırabilirsiniz.*
+*App Inventor ana sayfasında üst kısımda bulunan **'My Projects'** seçeneğine tıklayınca birkaç işlem seçeneği ile karşılaşırız. bunlardan **'Import project (.aia) from my computer ...'** seçeneğini seçtikten sonra bilgisayarınızdan indirmiş olduğunuz .aia uzantılı dosyayı seçerek çalıştırabilirsiniz. *
+* .apk uzantılı dosyayı telefonuza kurarak uygulamayı kullanabilirsiniz.*
 
 #### *Uygulama Kodları Hakkında*
 *Uygulama 5 ayrı sayfadan oluşmaktadır. Sayfa düzeni için dikey sıralamada **VerticalArrangement**(Birbirinin altında görüntülenmesi gereken bileşenlerin yerleştirileceği bir biçimlendirme öğesi.), yatay sıralamada ise **HorizontalArrangement**(Soldan sağa görüntülenmesi gereken bileşenlerin yerleştirileceği bir biçimlendirme öğesi.) kullanılmıştır. Bu öğelerin içerisine gerekli Button, TextBox ve Label bileşenleri yerleştirilmiştir.*
