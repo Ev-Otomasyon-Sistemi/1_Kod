@@ -27,7 +27,7 @@ Uygulama hazırlanıp deneme aşamasına gelindiğinde Android telefonlarda QR k
 ________________________________________________________________________________________________________________________________________
 #### *Proje Dosyasını Çalıştırma*
 *App Inventor ana sayfasında üst kısımda bulunan **'My Projects'** seçeneğine tıklayınca birkaç işlem seçeneği ile karşılaşırız. bunlardan **'Import project (.aia) from my computer ...'** seçeneğini seçtikten sonra bilgisayarınızdan indirmiş olduğunuz .aia uzantılı dosyayı seçerek çalıştırabilirsiniz. *
-* .apk uzantılı dosyayı telefonuza kurarak uygulamayı kullanabilirsiniz.*
+* .apk *uzantılı dosyayı telefonuza kurarak uygulamayı kullanabilirsiniz.*
 
 #### *Uygulama Kodları Hakkında*
 *Uygulama 5 ayrı sayfadan oluşmaktadır. Sayfa düzeni için dikey sıralamada **VerticalArrangement**(Birbirinin altında görüntülenmesi gereken bileşenlerin yerleştirileceği bir biçimlendirme öğesi.), yatay sıralamada ise **HorizontalArrangement**(Soldan sağa görüntülenmesi gereken bileşenlerin yerleştirileceği bir biçimlendirme öğesi.) kullanılmıştır. Bu öğelerin içerisine gerekli Button, TextBox ve Label bileşenleri yerleştirilmiştir.*
