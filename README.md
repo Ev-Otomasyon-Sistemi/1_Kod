@@ -24,6 +24,7 @@ Uygulama hazırlanıp deneme aşamasına gelindiğinde Android telefonlarda QR k
 *Eğer Android işletim sistemi bulunmayan bir mobil cihaza sahipseniz app inventor’ü bir emulatör üzerinden de kullanabilirsiniz. Bu bağlantı çok stabil olmamakla beraber sensör verilerini de kullanmamıza olanak sağlamıyor. Bilgisayarınıza kurmanız gereken emulatörü Windows, Mac ve Linux için  http://appinventor.mit.edu/explore/ai2/setup-emulator.html linkinden indirebilirsiniz.*
    
 *Emulatörü bilgisayara yükledikten sonra açmamız ve web ara yüzünden Connect-Emulator seçeneğini seçmemiz gerekiyor. Emulator seçeneği seçildikten 1-2 dakika içerisinde uygulamamız sanal olarak çalışmaya başlayacaktır.*
+________________________________________________________________________________________________________________________________________
 #### *Proje Dosyasını Çalıştırma*
 *App Inventor ana sayfasında üst kısımda bulunan 'My Projects' seçeneğine tıklayınca birkaç işlem seçeneği ile karşılaşırız. bunlardan 'Import project (.aia) from my computer ...' seçeneğini seçtikten sonra bilgisayarınızdan indirmiş olduğunuz .rar dosyası içerisindeki .aia uzantılı dosyayı seçerek çalıştırabilirsiniz.*
 
