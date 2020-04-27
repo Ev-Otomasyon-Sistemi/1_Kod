@@ -1,16 +1,16 @@
-### App Inventor Hakkında Bilgi 
-#### AppInventor Nedir?
+### *App Inventor Hakkında Bilgi* 
+#### *AppInventor Nedir?*
 *App Inventor, Massachusetts Institute of Technology(MIT) tarafından geliştirilen, programlama konusunda tecrübesi olmayan kimselerin kullanması için yapılmış olan ve Android uygulaması geliştirmesine olanak sağlayan bir uygulama geliştirme platformudur. En önemli özelliği drag and drop yani sürükle ve bırak şeklinde programlanabilmesidir.
 NOT: Uygulamaya girebilmek için gmail hesabı gerekmektedir.*
-#### Nasıl Giriş Yapılır?
+#### *Nasıl Giriş Yapılır?*
 *AppInventor’a giriş yapabilmek için http://appinventor.mit.edu/ adresinden, üstteki menüde bulunan 'create appss!' sekmesine tıklamamız gerekmekte.*
 *Bu sekmeye tıkladıktan sonra site bizi http://ai2.appinventor.mit.edu/ adresinde yönlendiriyor ve buradan google hesabımız ile giriş yapmamızı istiyor. Giriş yaptıktan sonra verilen uyarıya 'izin ver' diyerek geçebilirsiniz.
 İzni verdikten karşımıza çıkacak olan ekran bizim proje oluşturma ekranımız olup daha önce oluşturduğumuz projelere bu ekrandan ulaşabiliriz.*
 *Start New Project butonuna basılıp ve bir proje ismi girip OK butonuna tıklıyoruz.
 Karşımıza çıkacak ekran 5 parçaya ayrılmış durumdadır. Bunlar;*
-1. *Palette: Uygulamaya koyabileceğimiz görsel ya da işlevsel her şeyin bulunduğu kısım. Örneğin buton, onay kutusu, tarayıcı, bluetooth
+1. *Palette: Uygulamaya koyabileceğimiz görsel ya da işlevsel her şeyin bulunduğu kısım. Örneğin buton, onay kutusu, tarayıcı, bluetooth*
 2. *Viewer: Uygulamamızın göründüğü kısımdır. Uygulamayı bitirdiğimizde, görsel arayüz bu ekrandaki gibi gözükür*
-3. *Components: Uygulamamızda kullanacağımız nesnelerin ismini görüp değiştirebileceğimiz kısım
+3. *Components: Uygulamamızda kullanacağımız nesnelerin ismini görüp değiştirebileceğimiz kısım*
 4. *Media: Kullanacağımız ses, fotoğraf gibi dosyaların yükleneceği yer.*
 5. *Properties: Eklediğimiz nesnelerin ayarları ile bu kısımdan oynayabiliriz. Örneğin bir buton eklediğimizde, butonun üzerindeki yazıyı, boyutunu veya rengini buradan değiştirebiliriz.*
 
@@ -23,7 +23,7 @@ Uygulama hazırlanıp deneme aşamasına gelindiğinde Android telefonlarda QR k
 
 *Eğer Android işletim sistemi bulunmayan bir mobil cihaza sahipseniz app inventor’ü bir emulatör üzerinden de kullanabilirsiniz. Bu bağlantı çok stabil olmamakla beraber sensör verilerini de kullanmamıza olanak sağlamıyor. Bilgisayarınıza kurmanız gereken emulatörü Windows, Mac ve Linux için  http://appinventor.mit.edu/explore/ai2/setup-emulator.html linkinden indirebilirsiniz.*
    
-*Emulatörü bilgisayara yükledikten sonra açmamız ve web ara yüzünden Connect-Emulator seçeneğini seçmemiz gerekiyor. Emulator seçeneği seçildikten 1-2 dakika içerisinde uygulamamız sanal olarak çalışmaya başlayacaktır.
-#### Proje Dosyasını Çalıştırma
-*App Inventor ana sayfasında üst kısımda bulunan 'My Projects' seçeneğine tıklayınca birkaç işlem seçeneği ile karşılaşırız. bunlardan 'Import project (.aia) from my computer ...' seçeneğini seçtikten sonra bilgisayarınızdan indirmiş olduğunuz .rar dosyası içerisindeki .aia uzantılı dosyayı seçerek çalıştırabilirsiniz.
+*Emulatörü bilgisayara yükledikten sonra açmamız ve web ara yüzünden Connect-Emulator seçeneğini seçmemiz gerekiyor. Emulator seçeneği seçildikten 1-2 dakika içerisinde uygulamamız sanal olarak çalışmaya başlayacaktır.*
+#### *Proje Dosyasını Çalıştırma*
+*App Inventor ana sayfasında üst kısımda bulunan 'My Projects' seçeneğine tıklayınca birkaç işlem seçeneği ile karşılaşırız. bunlardan 'Import project (.aia) from my computer ...' seçeneğini seçtikten sonra bilgisayarınızdan indirmiş olduğunuz .rar dosyası içerisindeki .aia uzantılı dosyayı seçerek çalıştırabilirsiniz.*
 
