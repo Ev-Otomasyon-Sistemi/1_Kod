@@ -26,8 +26,8 @@ Uygulama hazırlanıp deneme aşamasına gelindiğinde Android telefonlarda QR k
 *Emulatörü bilgisayara yükledikten sonra açmamız ve web ara yüzünden Connect-Emulator seçeneğini seçmemiz gerekiyor. Emulator seçeneği seçildikten 1-2 dakika içerisinde uygulamamız sanal olarak çalışmaya başlayacaktır.*
 ________________________________________________________________________________________________________________________________________
 #### *Proje Dosyasını Çalıştırma*
-*App Inventor ana sayfasında üst kısımda bulunan **'My Projects'** seçeneğine tıklayınca birkaç işlem seçeneği ile karşılaşırız. bunlardan **'Import project (.aia) from my computer ...'** seçeneğini seçtikten sonra bilgisayarınızdan indirmiş olduğunuz .aia uzantılı dosyayı seçerek çalıştırabilirsiniz. *
-* .apk *uzantılı dosyayı telefonuza kurarak uygulamayı kullanabilirsiniz.*
+*App Inventor ana sayfasında üst kısımda bulunan **'My Projects'** seçeneğine tıklayınca birkaç işlem seçeneği ile karşılaşırız. bunlardan **'Import project (.aia) from my computer ...'** seçeneğini seçtikten sonra bilgisayarınızdan indirmiş olduğunuz .aia uzantılı dosyayı seçerek çalıştırabilirsiniz.*
+*.apk *uzantılı dosyayı telefonuza kurarak uygulamayı kullanabilirsiniz.*
 
 #### *Uygulama Kodları Hakkında*
 *Uygulama 5 ayrı sayfadan oluşmaktadır. Sayfa düzeni için dikey sıralamada **VerticalArrangement**(Birbirinin altında görüntülenmesi gereken bileşenlerin yerleştirileceği bir biçimlendirme öğesi.), yatay sıralamada ise **HorizontalArrangement**(Soldan sağa görüntülenmesi gereken bileşenlerin yerleştirileceği bir biçimlendirme öğesi.) kullanılmıştır. Bu öğelerin içerisine gerekli Button, TextBox ve Label bileşenleri yerleştirilmiştir.*
