@@ -1,2 +1,1 @@
-# 1_Kod
-Mobil uygulama
+#AppInventor Nedir?
