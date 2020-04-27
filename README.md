@@ -8,8 +8,8 @@ Bu sekmeye tıkladıktan sonra site bizi http://ai2.appinventor.mit.edu/ adresin
 İzni verdikten karşımıza çıkacak olan ekran bizim proje oluşturma ekranımız olup daha önce oluşturduğumuz projelere bu ekrandan ulaşabiliriz.
 Start New Project butonuna basılıp ve bir proje ismi girip OK butonuna tıklıyoruz.
 Karşımıza çıkacak ekran 5 parçaya ayrılmış durumdadır. Bunlar;
-1. Item 1 Palette: Uygulamaya koyabileceğimiz görsel ya da işlevsel her şeyin bulunduğu kısım. Örneğin buton, onay kutusu, tarayıcı, bluetooth
-1. Item 2 Viewer: Uygulamamızın göründüğü kısımdır. Uygulamayı bitirdiğimizde, görsel arayüz bu ekrandaki gibi gözükür
+1. 1 Palette: Uygulamaya koyabileceğimiz görsel ya da işlevsel her şeyin bulunduğu kısım. Örneğin buton, onay kutusu, tarayıcı, bluetooth
+1. Viewer: Uygulamamızın göründüğü kısımdır. Uygulamayı bitirdiğimizde, görsel arayüz bu ekrandaki gibi gözükür
 3-Components: Uygulamamızda kullanacağımız nesnelerin ismini görüp değiştirebileceğimiz kısım
 4-Media: Kullanacağımız ses, fotoğraf gibi dosyaların yükleneceği yer.
 5-Properties: Eklediğimiz nesnelerin ayarları ile bu kısımdan oynayabiliriz. Örneğin bir buton eklediğimizde, butonun üzerindeki yazıyı, boyutunu veya rengini buradan değiştirebiliriz.
