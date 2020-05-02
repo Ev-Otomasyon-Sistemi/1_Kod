@@ -3,9 +3,20 @@ App Inventor, Massachusetts Institute of Technology(MIT) tarafından geliştiril
 NOT: Uygulamaya girebilmek için gmail hesabı gerekmektedir.
 
 Proje Dosyasını Çalıştırma----------------------------------------
-App Inventor ana sayfasında üst kısımda bulunan 'My Projects' seçeneğine tıklayınca birkaç işlem seçeneği ile karşılaşırız. bunlardan 'Import project (.aia) from my computer ...' seçeneğini seçtikten sonra bilgisayarınızdan indirmiş olduğunuz .aia uzantılı dosyayı seçerek çalıştırabilirsiniz.
+App Inventor ana sayfasında üst kısımda bulunan 'My Projects' seçeneğine tıklayınca birkaç işlem seçeneği ile karşılaşırız. bunlardan 'Import project (.aia) from my computer ...' seçeneğini seçtikten sonra bilgisayarınızdan indirmiş olduğunuz .aia uzantılı dosyayı seçerek açabilirsiniz.
 
 .apk uzantılı dosyayı telefonuza indirip kurarak uygulamayı kullanabilirsiniz.
+Uygulamaya giriş yapmak için mevcut kullanıcı hesapları ve şifreler bulunur. Ekli kullanıcı hesaplanı aşağıda yer almaktadır.
+
+Çocuk Girişi için 
+Kullanıcı adı: esra     Şifre: 1234
+Kullanıcı adı: feyza    Şifre: abc1
+
+Yetişkin Girişi için
+Kullanıcı adı: halil    Şifre: H123
+Kullanıcı adı: özlem    Şifre: O123
+
+
 
 Uygulama Kodları Hakkında-----------------------------------------
 Uygulama 5 ayrı sayfadan oluşmaktadır. Sayfa düzeni için dikey sıralamada 'VerticalArrangement'(Birbirinin altında görüntülenmesi gereken bileşenlerin yerleştirileceği bir biçimlendirme öğesi.), yatay sıralamada ise HorizontalArrangement(Soldan sağa görüntülenmesi gereken bileşenlerin yerleştirileceği bir biçimlendirme öğesi.) kullanılmıştır. Bu öğelerin içerisine gerekli Button, TextBox ve Label bileşenleri yerleştirilmiştir.
