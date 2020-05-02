@@ -1,8 +1,8 @@
-AppInventor Nedir?-------------------------------------------------
+AppInventor Nedir?
 App Inventor, Massachusetts Institute of Technology(MIT) tarafından geliştirilen, programlama konusunda tecrübesi olmayan kimselerin kullanması için yapılmış olan ve Android uygulaması geliştirmesine olanak sağlayan bir uygulama geliştirme platformudur. En önemli özelliği drag and drop yani sürükle ve bırak şeklinde programlanabilmesidir.
 NOT: Uygulamaya girebilmek için gmail hesabı gerekmektedir.
 
-Proje Dosyasını Çalıştırma----------------------------------------
+Proje Dosyasını Çalıştırma
 App Inventor ana sayfasında üst kısımda bulunan 'My Projects' seçeneğine tıklayınca birkaç işlem seçeneği ile karşılaşırız. bunlardan 'Import project (.aia) from my computer ...' seçeneğini seçtikten sonra bilgisayarınızdan indirmiş olduğunuz .aia uzantılı dosyayı seçerek açabilirsiniz.
 
 .apk uzantılı dosyayı telefonuza indirip kurarak uygulamayı kullanabilirsiniz.
@@ -18,7 +18,7 @@ Kullanıcı adı: özlem    Şifre: O123
 
 
 
-Uygulama Kodları Hakkında-----------------------------------------
+Uygulama Kodları Hakkında
 Uygulama 5 ayrı sayfadan oluşmaktadır. Sayfa düzeni için dikey sıralamada 'VerticalArrangement'(Birbirinin altında görüntülenmesi gereken bileşenlerin yerleştirileceği bir biçimlendirme öğesi.), yatay sıralamada ise HorizontalArrangement(Soldan sağa görüntülenmesi gereken bileşenlerin yerleştirileceği bir biçimlendirme öğesi.) kullanılmıştır. Bu öğelerin içerisine gerekli Button, TextBox ve Label bileşenleri yerleştirilmiştir.
 
 İlk sayfada iki tane buton yer almaktadır. Butonlara tıklanarak 'open another screen' komutu ile butona atanan sayfaya yönlendirme yapılır. Bu iki butonun her birine atanan farklı sayfalar dolayısıyla farklı sayfalara geçiş sağlarnır. 
