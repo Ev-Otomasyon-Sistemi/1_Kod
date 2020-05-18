@@ -27,7 +27,7 @@ namespace _arduino_kayit
         public Form1()
         {
             InitializeComponent();
-            serialPort1.BaudRate = 9600;
+            serialPort1.BaudRate = 900;
 
         }
 
