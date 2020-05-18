@@ -27,7 +27,7 @@ namespace _arduino_kayit
         public Form1()
         {
             InitializeComponent();
-            serialPort1.BaudRate = 900;
+            serialPort1.BaudRate = 9600;
 
         }
 
@@ -113,5 +113,22 @@ namespace _arduino_kayit
             serialPort1.Close();
 
         }
+
+        private void btn_kaydet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string pathFile = @"C:\Users\ESRA YÜCE\Belgeler\Veri Günlüğü\Kayıt Dosyası\";
+                string fileName = "Kayıt Dosyası.txt";
+                System.IO.File.WriteAllText(pathFile + fileName, dataGridView1.Text);
+                MessageBox.Show("Veriler Kaydedildi" + pathFile);
+            }
+            catch (Exception ex3)
+            {
+                MessageBox.Show(ex3.Message, "Error");
+            }
+        }
+
+       
     }
 }

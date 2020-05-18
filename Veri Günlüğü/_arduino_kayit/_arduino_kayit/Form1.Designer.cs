@@ -40,6 +40,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btn_kaydet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             // btn_baglan
             // 
-            this.btn_baglan.Location = new System.Drawing.Point(354, 48);
+            this.btn_baglan.Location = new System.Drawing.Point(394, 48);
             this.btn_baglan.Name = "btn_baglan";
             this.btn_baglan.Size = new System.Drawing.Size(75, 23);
             this.btn_baglan.TabIndex = 1;
@@ -64,7 +65,7 @@
             // 
             // btn_durdur
             // 
-            this.btn_durdur.Location = new System.Drawing.Point(448, 48);
+            this.btn_durdur.Location = new System.Drawing.Point(394, 121);
             this.btn_durdur.Name = "btn_durdur";
             this.btn_durdur.Size = new System.Drawing.Size(75, 23);
             this.btn_durdur.TabIndex = 2;
@@ -74,7 +75,7 @@
             // 
             // btn_goster
             // 
-            this.btn_goster.Location = new System.Drawing.Point(544, 48);
+            this.btn_goster.Location = new System.Drawing.Point(394, 190);
             this.btn_goster.Name = "btn_goster";
             this.btn_goster.Size = new System.Drawing.Size(75, 23);
             this.btn_goster.TabIndex = 3;
@@ -120,18 +121,29 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(53, 121);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(323, 314);
+            this.dataGridView1.Size = new System.Drawing.Size(335, 314);
             this.dataGridView1.TabIndex = 8;
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btn_kaydet
+            // 
+            this.btn_kaydet.Location = new System.Drawing.Point(394, 260);
+            this.btn_kaydet.Name = "btn_kaydet";
+            this.btn_kaydet.Size = new System.Drawing.Size(75, 23);
+            this.btn_kaydet.TabIndex = 9;
+            this.btn_kaydet.Text = "Kaydet";
+            this.btn_kaydet.UseVisualStyleBackColor = true;
+            this.btn_kaydet.Click += new System.EventHandler(this.btn_kaydet_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 480);
+            this.Controls.Add(this.btn_kaydet);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -164,6 +176,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btn_kaydet;
     }
 }
 
