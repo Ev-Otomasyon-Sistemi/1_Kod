@@ -33,3 +33,21 @@ Bağlantı sağlandıysa tekrar bir kontrol yapısına girilir '.ReceiveText' il
 
 ----------------------------------------------------------Arduino---------------------------------------------------------------------
 Sistem için gerekli kütüphaneleri “<Wire.h>, <LiquidCrystal_I2C.h>, <Servo.h>, "DHT.h”” dahil ediniz. #define komutu sabit  değişkenler için , const sabit değerler için kullanılır. Gerekli yerler için Servo kütüphanesinden nesneler üretildi. Shift Register çoklu kullanımlar (ledler) için kullanılır. Mobil uygulama ile sistemin haberleşme hızı belirlenir Serial.begin() yardımı ile. Mobil uygulamadan gelen veriler Serial.read() aktarılır ve mobil uygulamadaki değişken isimlerinin karşılıkları ASCII tablosu yardımı ile sisteme entegre edilir. Ayrıca açma kapama işlemleri “0: kapat,1: aç” şeklinde yapılır.
+
+
+
+Lcd ekrana yazı yazdırmak için lcdyaz adında bir fonksiyon tanımlandı. Bu fonksiyon sensörlerden alınan değerleri lcd 
+ekranda yazdırır.
+Lcd ekranda sıcaklık değerini yazdırmak için koşul ifadesi yazıldı. Bu koşul sayesinde DHT11 sensöründen alınan sıcaklık 
+değeri ekrana yazdırılır.
+Lcd ekranda mesafe değerini yazdırmak için koşul ifadesi yazıldı. Bu koşul sayesinde HC-SR04 sensöründen alınan mesafe değeri 
+ekrana yazdırılır.
+Lcd ekranda gaz değerini yazdırmak için koşul ifadesi yazıldı. Bu koşul sayesinde MQ-2 sensöründen alınan gaz değeri 
+ekrana yazdırılır.
+Lcd ekranda nem değerini yazdırmak için koşul ifadesi yazıldı. Bu koşul sayesinde DHT11 sensöründen alınan nem değeri 
+ekrana yazdırılır.
+Hareketi algılamak için PIR sensöründen okuma yapılır ve değer alınır.
+Kapı ve pencere için servo motor kullanılarak kontrol sağlanır. 
+Toprak ve nem ölçümü yapmak için toprak nem sensöründen okunan analog değer fonksiyonlardaki değişkenlere aktarılır.
+Buzzer kontrolünü sağlamak için buzzer isminde fonksiyon oluşturulur ve gerekli yerde buzzer ses çıkartır.
+
