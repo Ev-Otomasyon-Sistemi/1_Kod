@@ -183,3 +183,133 @@ int led(byte a,byte b,byte c,byte d,byte e,byte f){
   digitalWrite(latchPin, 1);        //8 bitli dizi çıkışa verilir
 }
 
+void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bluetoothveri){
+
+  //Serial.println(bluetoothveri);
+
+ if(bluetoothveri==90){
+  
+    lcd.setCursor(7,0); 
+    lcd.print("SIC");
+    lcd.setCursor(9,1); 
+    lcd.print(" ");
+    lcd.setCursor(7,1);
+    lcd.print(sicaklikverisi);
+ }
+ 
+ if(bluetoothveri==79){
+    if(mesafeverisi<100){
+    lcd.setCursor(9,1);
+    lcd.print(" ");
+    lcd.setCursor(10,1);
+    lcd.print(" ");
+  }
+   if(mesafeverisi<10){
+    lcd.setCursor(8,1);
+    lcd.print(" ");
+    lcd.setCursor(9,1);
+    lcd.print(" ");
+  }
+    lcd.setCursor(7,0);
+    lcd.print("MES");
+    lcd.setCursor(7,1);
+    lcd.print(mesafeverisi);
+ }
+ 
+ if(bluetoothveri==83){
+    if(gazveri<100){
+    lcd.setCursor(9,1);
+    lcd.print(" ");
+    lcd.setCursor(10,1);
+    lcd.print(" ");
+  }
+    lcd.setCursor(7,0); 
+    lcd.print("GAZ");
+    lcd.setCursor(7,1);
+    lcd.print(gazveri);
+  
+ }
+ 
+ if(bluetoothveri==87){
+    if(nemverisi<1000){
+    lcd.setCursor(10,1);
+    lcd.print(" ");
+    lcd.setCursor(11,1);
+    lcd.print(" ");
+  }
+     lcd.setCursor(7,0); 
+    lcd.print("NEM");
+    lcd.setCursor(7,1);
+    lcd.print(nemverisi);
+ }
+
+
+
+
+}
+int gaz(){
+  int gazdeger=analogRead(gazsensor);
+  return gazdeger;
+}
+int mesafeolc(){
+  int sure,mesafe;
+  digitalWrite(trig, HIGH);
+  delayMicroseconds(1000);
+  digitalWrite(trig, LOW);
+  sure = pulseIn(echo, HIGH);
+  mesafe = (sure/2) / 29.1; 
+  return mesafe;
+}
+
+float sicaklik(){
+  float t = evotomasyonu.readTemperature();
+return t;
+}
+
+
+int hareket(){
+  int hdeger;
+  int pirDeger = digitalRead(pirPin);
+  
+if (pirDeger == HIGH) 
+hdeger=1;
+else
+hdeger=0;
+
+return hdeger;
+
+}
+int servokapi(int kapiderece){
+kapiservo.write(kapiderece);   
+}
+int servopencere(int pencerederece){  
+ pencereservo.write(pencerederece);  
+}
+void motor(int msure){
+
+  
+  delay(1000);
+  sayac=sayac+1;
+  if(sayac>msure){
+   digitalWrite(mileri,0);
+  digitalWrite(mgeri,0);
+  }
+  else{
+    digitalWrite(mileri,0);
+  digitalWrite(mgeri,1);
+  }
+//Serial.println(sayac);
+
+}
+
+int topraknem(){
+  int nemdeger=analogRead(A2);
+   return nemdeger;
+}
+void buzzer(int ton){
+  digitalWrite(buzzerpin,1);
+  delay(ton);
+   digitalWrite(buzzerpin,0);
+  delay(ton);
+  
+}
