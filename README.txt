@@ -17,37 +17,7 @@ Yetişkin Girişi için
 Kullanıcı adı: halil    Şifre: H123
 Kullanıcı adı: özlem    Şifre: O123
 
-
-
-Uygulama Kodları Hakkında
-Uygulama 5 ayrı sayfadan oluşmaktadır. Sayfa düzeni için dikey sıralamada 'VerticalArrangement'(Birbirinin altında görüntülenmesi gereken bileşenlerin yerleştirileceği bir biçimlendirme öğesi.), yatay sıralamada ise HorizontalArrangement(Soldan sağa görüntülenmesi gereken bileşenlerin yerleştirileceği bir biçimlendirme öğesi.) kullanılmıştır. Bu öğelerin içerisine gerekli Button, TextBox ve Label bileşenleri yerleştirilmiştir.
-
-İlk sayfada iki tane buton yer almaktadır. Butonlara tıklanarak 'open another screen' komutu ile butona atanan sayfaya yönlendirme yapılır. Bu iki butonun her birine atanan farklı sayfalar dolayısıyla farklı sayfalara geçiş sağlarnır. Açılan sayfalar Çocuk Girişi ve Yetişkin Girişi sayfalarıdır. Bu sayfalarda kullanıcı, kullanıcı adını ve şifresini girer. 
-Girilen bilgiler giriş kontrolüne bağlı olan matematik ve lojik yapılar sayesinde kayıtlı kullanıcı bilgileri ile karşılaştırılır. Bilgiler doğru ise butona atanan sayfaya geçiş yapılır, bilgiler yanlış ise 'kullanıcı adı veya şifre hatalı' uyarısı verip 'tekrar dene' seçeneği sunar. 
-Bu hata mesajı 'Notifier'(uyarı iletişim kutularını, iletileri ve geçici uyarıları görüntüler) öğesi ile sağlanır. 
-Giriş sağlandıktan sonra son olarak Akıllı Ev maketinde bulunan sensörlerin kontrolünün sağlandığı ana sayfa açılır. 
-Bluetooth bağlantısını sağlamak için ilk olarak '.BeforePickink' komutu ile bluetooth adresleri aranır ve '.AfterPicking' kontrolünde '.Connect address' ile çıkan ve bluetooth cihazımız ile eşleşen adres seçilir. Aynı şekilde bağlantıyı kesmek için '.Disconnect' kullanılır. 
-Sensör kontrolünü sağlayan her bir buton bluetooth bağlantısı sayesinde '.SendText' komutu ile veri göndererek sensör kontrolünü sağlar. 
-Oda sıcaklığını görüntülemek için ilgili sensöre '.SendText' ile veri gönderilir 'if' kontrol yapısı ile bluetooth bağlantısı kontrol edilir. 
-Bağlantı sağlandıysa tekrar bir kontrol yapısına girilir '.ReceiveText' ile  alınan veri ilgili label'a yazılması için lojik yapısı kullanılarak eşitleme sağlandı ise veri label'a yazılır.
-
 ----------------------------------------------------------Arduino---------------------------------------------------------------------
-Sistem için gerekli kütüphaneleri “<Wire.h>, <LiquidCrystal_I2C.h>, <Servo.h>, "DHT.h”” dahil ediniz. #define komutu sabit  değişkenler için , const sabit değerler için kullanılır. Gerekli yerler için Servo kütüphanesinden nesneler üretildi. Shift Register çoklu kullanımlar (ledler) için kullanılır. Mobil uygulama ile sistemin haberleşme hızı belirlenir Serial.begin() yardımı ile. Mobil uygulamadan gelen veriler Serial.read() aktarılır ve mobil uygulamadaki değişken isimlerinin karşılıkları ASCII tablosu yardımı ile sisteme entegre edilir. Ayrıca açma kapama işlemleri “0: kapat,1: aç” şeklinde yapılır.
-
-
-
-Lcd ekrana yazı yazdırmak için lcdyaz adında bir fonksiyon tanımlandı. Bu fonksiyon sensörlerden alınan değerleri lcd 
-ekranda yazdırır.
-Lcd ekranda sıcaklık değerini yazdırmak için koşul ifadesi yazıldı. Bu koşul sayesinde DHT11 sensöründen alınan sıcaklık 
-değeri ekrana yazdırılır.
-Lcd ekranda mesafe değerini yazdırmak için koşul ifadesi yazıldı. Bu koşul sayesinde HC-SR04 sensöründen alınan mesafe değeri 
-ekrana yazdırılır.
-Lcd ekranda gaz değerini yazdırmak için koşul ifadesi yazıldı. Bu koşul sayesinde MQ-2 sensöründen alınan gaz değeri 
-ekrana yazdırılır.
-Lcd ekranda nem değerini yazdırmak için koşul ifadesi yazıldı. Bu koşul sayesinde DHT11 sensöründen alınan nem değeri 
-ekrana yazdırılır.
-Hareketi algılamak için PIR sensöründen okuma yapılır ve değer alınır.
-Kapı ve pencere için servo motor kullanılarak kontrol sağlanır. 
-Toprak ve nem ölçümü yapmak için toprak nem sensöründen okunan analog değer fonksiyonlardaki değişkenlere aktarılır.
-Buzzer kontrolünü sağlamak için buzzer isminde fonksiyon oluşturulur ve gerekli yerde buzzer ses çıkartır.
+indirilen kod dosyası Arduino ide'de açılır ve sistem için gerekli kütüphaneler (“<Wire.h>, <LiquidCrystal_I2C.h>, <Servo.h>, "DHT.h”) dahil edilir. Derlenen kod arduino uno arabirimine yüklenir. 
+Mobil uygulama ile sistemin haberleşme hızı Serial.begin() yardımı ile belirlenir . Mobil uygulamadan gelen veriler Serial.read() aktarılır ve mobil uygulamadaki değişken isimlerinin karşılıkları ASCII tablosu yardımı ile sisteme entegre edilir. Ayrıca açma kapama işlemleri “0: kapat,1: aç” şeklinde yapılır.
 
