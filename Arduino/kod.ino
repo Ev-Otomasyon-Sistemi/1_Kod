@@ -1,3 +1,7 @@
+//BÜTÜN PROGRAM KODLARI TÜM EKİP ÜYELERİNİN ORTAK ÇALIŞMASI İLE YAZILMIŞTIR!
+//Yazan,Test Eden,Hata Ayıklayan: Esra YÜCE, Feyza YILMAZ, Halil SEÇİLMİŞ, Özlem ÖZKAYA
+
+
 #include <Wire.h> /*bağlantı fonksiyonlarını bulundurur.*/
 #include <LiquidCrystal_I2C.h>  /*LCD ekran çalışma ve bağlantısı*/
 LiquidCrystal_I2C lcd(0x27, 16, 2); /* lcd nin adresini ve kaca kac lcd olduguu tanımladık*/
