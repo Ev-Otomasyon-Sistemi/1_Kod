@@ -261,7 +261,8 @@ int mesafeolc(){
   delayMicroseconds(1000);  //1 saniye aralıklarla ses dalgası yayılır. 
   digitalWrite(trig, LOW);
   sure = pulseIn(echo, HIGH);
-  mesafe = (sure/2) / 29.1;  //Mikrofona bir ses dalgası çarparsa bunun için bir süre tutar. Bu süreyi 2 ye bölüp, 29.1(sesin havada yayılma hızı)’e bölünür ve mesafe adlı değişkene atanır. 
+  mesafe = (sure/2) / 29.1;  //Mikrofona bir ses dalgası çarparsa bunun için bir süre tutar. Bu süreyi 2 ye bölüp,
+  //29.1(sesin havada yayılma hızı)’e bölünür ve mesafe adlı değişkene atanır. 
   return mesafe;   //Sonuç olarak geriye mesafe değişkeni return olarak ana fonksiyona döndürülür ve ekrana yazdırılır. 
 }
 
