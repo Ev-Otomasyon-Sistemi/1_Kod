@@ -7,9 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AForge.Video; //*
-using AForge.Video.DirectShow; //*
+using AForge.Video; 
+using AForge.Video.DirectShow; 
 using System.IO;
+
+//BÜTÜN PROGRAM KODLARI TÜM EKİP ÜYELERİNİN ORTAK ÇALIŞMASI İLE YAZILMIŞTIR!
+//Yazan,Test Eden,Hata Ayıklayan; Esra YÜCE, Feyza YILMAZ, Halil SEÇİLMİŞ, Özlem ÖZKAYA
 
 //Güvenlik_Ekranı
 namespace Güvenlik_Veri
