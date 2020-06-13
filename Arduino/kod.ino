@@ -108,6 +108,7 @@ else{
 
 }*/
 
+//gelen verilere göre  kontrol yapıyor ve uygulama ile burada uggulamadaki harf sistemini asci tablouna göre yapıldı
 int bluetoothkontrol(int btgelen){
 
   
@@ -168,7 +169,7 @@ int bluetoothkontrol(int btgelen){
      delay(150  );
  
 }
-
+/*çoklu led olduğu için bir diziye kayıt edildi ayrıca for döngüünde koylık sağlayacak*/
 int led(byte a,byte b,byte c,byte d,byte e,byte f){
   boolean dizi[] = {0, 0, f, e, d, c, b, a};  //nokta,g,f,e,d,c,b,a  = 1 acık 0 kapali
   digitalWrite(latchPin, 0);       
