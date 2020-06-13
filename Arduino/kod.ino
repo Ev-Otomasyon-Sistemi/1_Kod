@@ -34,7 +34,7 @@ int buzzerpin=13; /*buzzerimızın(alrm) takılı oluğu pin*/
 byte led1,led2,led3,led4,led5,led6;
 
 byte kapi,penc;
-void setup()
+/*void setup()
 {
   Serial.begin(9600);
   lcd.begin(); //lcd hazırlandı
@@ -106,11 +106,8 @@ else{
 //Serial.print("*");
 //Serial.println(mesafedegeri);
 
+}*/
 
-
-
- 
-}
 int bluetoothkontrol(int btgelen){
 
   
