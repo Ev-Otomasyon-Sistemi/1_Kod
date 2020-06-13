@@ -1,0 +1,7 @@
+C:\Users\ESRA YÜCE\Desktop\Arduino_Test\Arduino_Test\bin\Debug\Arduino_Test.exe.config
+C:\Users\ESRA YÜCE\Desktop\Arduino_Test\Arduino_Test\bin\Debug\Arduino_Test.exe
+C:\Users\ESRA YÜCE\Desktop\Arduino_Test\Arduino_Test\bin\Debug\Arduino_Test.pdb
+C:\Users\ESRA YÜCE\Desktop\Arduino_Test\Arduino_Test\obj\Debug\Arduino_Test.csprojAssemblyReference.cache
+C:\Users\ESRA YÜCE\Desktop\Arduino_Test\Arduino_Test\obj\Debug\Arduino_Test.csproj.CoreCompileInputs.cache
+C:\Users\ESRA YÜCE\Desktop\Arduino_Test\Arduino_Test\obj\Debug\Arduino_Test.exe
+C:\Users\ESRA YÜCE\Desktop\Arduino_Test\Arduino_Test\obj\Debug\Arduino_Test.pdb
