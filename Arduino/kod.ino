@@ -185,119 +185,123 @@ int led(byte a,byte b,byte c,byte d,byte e,byte f){
   digitalWrite(latchPin, 1);        //8 bitli dizi çıkışa verilir
 }
 
-void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bluetoothveri){
+void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bluetoothveri){ //Lcd ekranına yazı yazmak için lcdyaz adında bir fonksiyon tanımlandı.
 
   //Serial.println(bluetoothveri);
 
- if(bluetoothveri==90){
+ if(bluetoothveri==90){//İf komutu bluetooth verisini kontrol eder. Eğer bluetooth verisi 90(sıcaklığı göster anlamına gelir) değerine eşit ise; 
   
-    lcd.setCursor(7,0); 
-    lcd.print("SIC");
-    lcd.setCursor(9,1); 
-    lcd.print(" ");
-    lcd.setCursor(7,1);
-    lcd.print(sicaklikverisi);
+    lcd.setCursor(7,0); // hangi satırda hangi sutunda olacağını belirtir. 7. sutun, 0.satıra ekran imlecini ayarlar. 7.sutun, 0.satır  
+    lcd.print("SIC"); //itibariyle ekrana “SIC” yazar.
+    lcd.setCursor(9,1); //9. sutun, 1.satıra ekran imlecini ayarlar. 9.sutun, 1.satır 
+    lcd.print(" "); //ekrana “ ” yazar.
+    lcd.setCursor(7,1);//7. sutun, 1.satıra ekran imlecini ayarlar. 7.sutun, 1.satır
+    lcd.print(sicaklikverisi);  // ekrana DHT11 sensöründen aldığı sicaklikverisi’ni yazar
  }
  
- if(bluetoothveri==79){
-    if(mesafeverisi<100){
-    lcd.setCursor(9,1);
-    lcd.print(" ");
-    lcd.setCursor(10,1);
-    lcd.print(" ");
+ if(bluetoothveri==79){ //İf komutu bluetooth verisini kontrol eder. Eğer bluetooth verisi 79 değerine eşit ise;  
+
+    if(mesafeverisi<100){ //Eğer mesafeverisi 100 değerinden küçük ise
+    lcd.setCursor(9,1); //9. sutun, 1.satıra ekran imlecini ayarlar. 9.sutun, 1.satır
+    lcd.print(" ");  // ekrana “ ” yazar. 
+    lcd.setCursor(10,1); //10. sutun, 1.satıra ekran imlecini ayarlar. 10.sutun, 1.satır 
+    lcd.print(" ");  // ekrana “ “ yazar. 
   }
-   if(mesafeverisi<10){
-    lcd.setCursor(8,1);
-    lcd.print(" ");
-    lcd.setCursor(9,1);
-    lcd.print(" ");
-  }
-    lcd.setCursor(7,0);
-    lcd.print("MES");
-    lcd.setCursor(7,1);
-    lcd.print(mesafeverisi);
+   if(mesafeverisi<10){   //Eğer mesafeverisi 10 değerinden küçük ise; 
+    lcd.setCursor(8,1);  //8. sutun, 1.satıra ekran imlecini ayarlar. 8.sutun, 1.satır
+    lcd.print(" ");  // ekrana “ ” yazar. 
+    lcd.setCursor(9,1);   //9. sutun, 1.satıra ekran imlecini ayarlar. 9.sutun, 1.satır
+    lcd.print(" ");  //ekrana “ “ yazar
+  }   //Eğer hiçbiri değil ise; 
+    lcd.setCursor(7,0);  //7. sutun, 0.satıra ekran imlecini ayarlar. 7.sutun, 0.satır 
+    lcd.print("MES"); // ekrana “ MES” yazar
+    lcd.setCursor(7,1); //7. sutun, 1.satıra ekran imlecini ayarlar. 7.sutun, 1.satır itibariyle 
+    lcd.print(mesafeverisi); //ekrana HC-SR04 sensöründen aldığı mesafeverisi yazar. 
  }
  
- if(bluetoothveri==83){
-    if(gazveri<100){
-    lcd.setCursor(9,1);
-    lcd.print(" ");
-    lcd.setCursor(10,1);
-    lcd.print(" ");
-  }
-    lcd.setCursor(7,0); 
-    lcd.print("GAZ");
-    lcd.setCursor(7,1);
-    lcd.print(gazveri);
+ if(bluetoothveri==83){  //İf komutu bluetooth verisini kontrol eder. Eğer bluetooth verisi 83 değerine eşit ise;  
+ 
+    if(gazveri<100){  // Eğer gazverisi 100 değerinden küçük ise; 
+    lcd.setCursor(9,1);  //9. sutun, 1.satıra ekran imlecini ayarlar. 9.sutun, 1.satır 
+    lcd.print(" ");   //ekrana “ ” yazar
+    lcd.setCursor(10,1);  //10. sutun, 1.satıra ekran imlecini ayarlar. 10.sutun, 1.satır
+    lcd.print(" ");  //ekrana “ “ yazar
+  } //Eğer gazverisi 100 değerinden büyük ise; 
+    lcd.setCursor(7,0);  //7. sutun, 0.satıra ekran imlecini ayarlar. 7.sutun, 0.satır 
+    lcd.print("GAZ"); //ekrana “ GAZ” yazar.
+    lcd.setCursor(7,1);  //7. sutun, 1.satıra ekran imlecini ayarlar. 7.sutun, 1.satır
+    lcd.print(gazveri);  //ekrana MQ-2 sensöründen aldığı gazverisi yazar 
   
  }
  
- if(bluetoothveri==87){
-    if(nemverisi<1000){
-    lcd.setCursor(10,1);
+ if(bluetoothveri==87){  //İf komutu bluetooth verisini kontrol eder. Eğer bluetooth verisi 87 değerine eşit ise
+    if(nemverisi<1000){  // Eğer nemverisi 1000 değerinden küçük ise; 
+    lcd.setCursor(10,1);  //10. sutun, 1.satıra ekran imlecini ayarlar. 10.sutun, 1.satır
+    lcd.print(" ");  //ekrana “ ” yazar. 
+    lcd.setCursor(11,1); //11. sutun, 1.satıra ekran imlecini ayarlar. 11.sutun, 1.satır 
     lcd.print(" ");
-    lcd.setCursor(11,1);
-    lcd.print(" ");
-  }
-     lcd.setCursor(7,0); 
-    lcd.print("NEM");
+  }   //Eğer nemverisi 1000 değerinden büyük ise
+     lcd.setCursor(7,0);   //7. sutun, 0.satıra ekran imlecini ayarlar. 7.sutun, 0.satır 
+    lcd.print("NEM");  //ekrana “ NEM” yazar. 
     lcd.setCursor(7,1);
-    lcd.print(nemverisi);
+    lcd.print(nemverisi); //ekrana DHT11 sensöründen aldığı nemverisi yazar. 
  }
 
 
 
 
 }
-int gaz(){
-  int gazdeger=analogRead(gazsensor);
-  return gazdeger;
+int gaz(){ //Gaz ın çıkış pininden bir değer okunur ve o değer return olarak ana fonksiyona döndürülür. 
+  int gazdeger=analogRead(gazsensor);  //MQ-2 sensöründen okunan analog değer gazdeger isimli değişkene aktarılır. 
+  return gazdeger;   //Sonuç olarak sensörden aldığı gazdegeri’ni return olarak ana fonksiyona döndürür ve ekrana yazdırılır
 }
-int mesafeolc(){
-  int sure,mesafe;
-  digitalWrite(trig, HIGH);
-  delayMicroseconds(1000);
+int mesafeolc(){ 
+  int sure,mesafe;  // Sure ve mesafe isminde 2 tane değişken oluşturuldu.
+  digitalWrite(trig, HIGH); //trig pinini HIGH durumunda başlatıyoruz.
+  delayMicroseconds(1000);  //1 saniye aralıklarla ses dalgası yayılır. 
   digitalWrite(trig, LOW);
   sure = pulseIn(echo, HIGH);
-  mesafe = (sure/2) / 29.1; 
-  return mesafe;
+  mesafe = (sure/2) / 29.1;  //Mikrofona bir ses dalgası çarparsa bunun için bir süre tutar. Bu süreyi 2 ye bölüp, 29.1(sesin havada yayılma hızı)’e bölünür ve mesafe adlı değişkene atanır. 
+  return mesafe;   //Sonuç olarak geriye mesafe değişkeni return olarak ana fonksiyona döndürülür ve ekrana yazdırılır. 
 }
 
-float sicaklik(){
-  float t = evotomasyonu.readTemperature();
-return t;
+float sicaklik(){   //Sicaklik isminde float tipinde değer döndüren bir fonksiyon oluşturuldu
+  float t = evotomasyonu.readTemperature();   //DHT11 sensöründen sıcaklık değeri okunur ve t değişkenine aktarılır.  
+return t;   //sensörden aldığı sıcaklık değeri return olarak ana fonksiyona döndürülür ve ekrana yazdırılır.  
+ 
 }
 
 
 int hareket(){
   int hdeger;
-  int pirDeger = digitalRead(pirPin);
+  int pirDeger = digitalRead(pirPin);  // PIR sensöründen okuma yapılır ve pirDegerine aktarılır
   
 if (pirDeger == HIGH) 
-hdeger=1;
+hdeger=1;  //Eğer alınan pirDegerinde hareketlilik var ise hdeger yani hareket değeri 1 olur
 else
-hdeger=0;
+hdeger=0;  //Eğer alınan pirDegerinde hareketlilik yok ise hdeger yani hareket değeri 0 olur.
 
-return hdeger;
+return hdeger;  //sensörden aldığı hareket değeri döndürülür.
 
 }
 int servokapi(int kapiderece){
-kapiservo.write(kapiderece);   
+kapiservo.write(kapiderece);     //kodu ile servo motorun kapiderecesi açı değerine dönmesini sağlar. 
+
 }
 int servopencere(int pencerederece){  
- pencereservo.write(pencerederece);  
+ pencereservo.write(pencerederece);  //kodu ile servo motorun pencerederece açı değerine dönmesini sağlar.  
 }
 void motor(int msure){
 
   
-  delay(1000);
-  sayac=sayac+1;
-  if(sayac>msure){
-   digitalWrite(mileri,0);
+  delay(1000);  //1000 milisaniye bekletilir. 
+  sayac=sayac+1;  //Sayaç oluşturulur ve her seferinde sayaç 1 arttırılır.
+  if(sayac>msure){  //Eğer sayaç değeri motor süresinden büyükse
+   digitalWrite(mileri,0);   // motor ileri pini logıc 0 ve motor geri pini logic 0 yapılır. 
   digitalWrite(mgeri,0);
   }
-  else{
-    digitalWrite(mileri,0);
+  else{   //Sayaç değeri motor süresinden küçükse
+    digitalWrite(mileri,0);  // motor ileri pini logic 0 ve motor geri pini logıc 1 yapılır.
   digitalWrite(mgeri,1);
   }
 //Serial.println(sayac);
@@ -305,13 +309,13 @@ void motor(int msure){
 }
 
 int topraknem(){
-  int nemdeger=analogRead(A2);
-   return nemdeger;
+  int nemdeger=analogRead(A2);   //Toprak nem sensöründen okunan analog değer nemdeger isimli değişkene aktarılır
+   return nemdeger;   //Sonuç olarak sensörden aldığı nemdegeri döndürür
 }
 void buzzer(int ton){
-  digitalWrite(buzzerpin,1);
+  digitalWrite(buzzerpin,1);  // buzzerpin pini logıc 1 yapılır. Delay(ton) fonksiyonu sayesinde buzzer ses çıkartır. 
   delay(ton);
-   digitalWrite(buzzerpin,0);
+   digitalWrite(buzzerpin,0);  //buzzerpin pini logıc 0 yapılır. Delay(ton) fonksiyonu sayesinde buzzer ses çıkartır. 
   delay(ton);
   
 }
