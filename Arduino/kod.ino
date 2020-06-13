@@ -1,31 +1,35 @@
-#include <Wire.h> 
-#include <LiquidCrystal_I2C.h> 
-LiquidCrystal_I2C lcd(0x27, 16, 2); 
+#include <Wire.h> /*bağlantı fonksiyonlarını bulundurur.*/
+#include <LiquidCrystal_I2C.h>  /*LCD ekran çalışma ve bağlantısı*/
+LiquidCrystal_I2C lcd(0x27, 16, 2); /* lcd nin adresini ve kaca kac lcd olduguu tanımladık*/
 
-#include "DHT.h"
-#define DHTPIN 2
-#define DHTTYPE DHT11
+
+#include "DHT.h" /*sıcaklık-nem sensörü bulunduran kütüphane*/
+#define DHTPIN 2 /*sabit bir değişken olan DHT11PIN olarak Dijital 2"yi belirliyoruz.*/
+#define DHTTYPE DHT11 /**/
 DHT evotomasyonu(DHTPIN, DHTTYPE);
 
-#include <Servo.h>
-Servo kapiservo;
+#include <Servo.h> /*servo motor kütüphanesi*/
+Servo kapiservo;  /*servo kütüphaneini kullancaklar*/
 Servo pencereservo;
 
-const int mileri=9;
-const int mgeri=10;
+const int mileri=9;  /*motroun dönüşü*/
+const int mgeri=10; /*motroun dönüşü*/
+/*Hareket sensörü ortamdaki sıcaklık ve kızılötesi dalga değişimlerini algılamaya yarayan sensörler*/
+const int pirPin = 8; /*Pır sensörünü takıldığı sabir pin*/
+const int gazsensor=A0; /*gaz sensörünü takıldığı sabir pin*/
+/*Hareket sensörü için*/
+const int trig = 3;   /* Sensorun trig pini Arduinonun 3 numaralı ayağına bağlandı */
+const int echo = 4; /* Sensorun echo pini Arduinonun 4 numaralı ayağına bağlandı */
+/*çoklu led kontrlolü*/ /*ÇIKIŞ PİNLERİ*/
 
-const int pirPin = 8;
-const int gazsensor=A0;
-const int trig = 3;   
-const int echo = 4;
-
-const byte  latchPin = 7;  // Pin connected to Pin 12 of 74HC595 (Latch)
+const byte  latchPin = 7;  // Pin connected to Pin 12 of 74HC595 (Latch)  /*74Hc595 SHİFT REGİSTER ENTEGRESİ*/
 const byte dataPin  = 6;   // Pin connected to Pin 14 of 74HC595 (Data)
 const byte clockPin = 5;   // Pin connected to Pin 11 of 74HC595 (Clock)
 int x = 0;                          
-int sayac=0,btgelen,btgelenveri,gazdegeri,nemdegeri,sicaklikdegeri,mesafedegeri,skontrol;
+int sayac=0,btgelen,btgelenveri,gazdegeri,nemdegeri,sicaklikdegeri,mesafedegeri,skontrol; /*Kullılıcak değişkenlerimizi tanımladık*/
 
-int buzzerpin=13;
+int buzzerpin=13; /*buzzerimızın(alrm) takılı oluğu pin*/
+
 
 byte led1,led2,led3,led4,led5,led6;
 
