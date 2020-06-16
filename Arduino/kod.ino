@@ -40,9 +40,7 @@ int buzzerpin=13; // buzzerın(alrm) takılı oluğu pin.
 byte led1,led2,led3,led4,led5,led6;
 
 byte kapi,penc;
-#include <Wire.h> /*bağlantı fonksiyonlarını bulundurur.*/
-#include <LiquidCrystal_I2C.h>  /*LCD ekran çalışma ve bağlantısı*/
-LiquidCrystal_I2C lcd(0x27, 16, 2); /* lcd nin adresini ve kaca kac lcd olduguu tanımladık*/
+
 
 
 void setup() /*Genel ayarlamlar yapıldı 1kere çalışır*/
