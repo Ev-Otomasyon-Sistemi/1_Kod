@@ -40,13 +40,20 @@ int buzzerpin=13; // buzzerın(alrm) takılı oluğu pin.
 byte led1,led2,led3,led4,led5,led6;
 
 byte kapi,penc;
-/*void setup()
+#include <Wire.h> /*bağlantı fonksiyonlarını bulundurur.*/
+#include <LiquidCrystal_I2C.h>  /*LCD ekran çalışma ve bağlantısı*/
+LiquidCrystal_I2C lcd(0x27, 16, 2); /* lcd nin adresini ve kaca kac lcd olduguu tanımladık*/
+
+
+void setup() /*Genel ayarlamlar yapıldı 1kere çalışır*/
 {
-  Serial.begin(9600);
+  Serial.begin(9600);/*seri haberleşme hızı*/
+  /*lcd boyutlarını ayarlanması*/
   lcd.begin(); //lcd hazırlandı
   lcd.backlight(); // arka plan ışığı ayarlandı
-  kapiservo.attach(A3);  // attaches the servo on pin 9 to the servo object
-  pencereservo.attach(A1 );
+ kapiservo.attach(A3);  // kapi için oluşturduğumuz nesneyi A3 pinine takarak servo motrunmuzu kulllanılamsı
+  pencereservo.attach(A1 );  // perde için oluşturduğumuz nesneyi A3 pinine takarak servo motrunmuzu kulllanılamsı
+    /*ledler için tanımlalan pinleri çıkış olarak ayarlandır*/
   pinMode(latchPin, OUTPUT);   
   pinMode(clockPin, OUTPUT);
   pinMode(dataPin, OUTPUT);
@@ -57,62 +64,24 @@ byte kapi,penc;
   pinMode(mgeri,OUTPUT);
   pinMode(buzzerpin,OUTPUT);
 
-//  for(int i=0;i<=13;i++){
-//    digitalWrite(i,LOW);
-//  }
 
-    lcd.setCursor(7,0); //yazının lcd ekrandaki konumu belirlendi
-    lcd.print("EV");
+
+
+    lcd.setCursor(7,0); // //yazının lcd ekrandaki konumu belirlendi
+    lcd.print("EV"); //lcd yi metin yazdırma işlemi
     lcd.setCursor(3,1);
     lcd.print("OTOMASYONU");
-    delay(3000);
-    lcd.clear();
-
+      delay(3000); //bekletem saniyesi 3 saniye
+    lcd.clear(); //lcd tezmiler ekranı
     
 }
  
-void loop()
+void loop() /*Arduino'nun yapması gereken işlemler buraya yazılır*/
+
 {
   if(Serial.available() > 0){     
       btgelenveri = Serial.read();   
     }
- //Serial.println(btgelenveri);  
- 
-bluetoothkontrol(btgelenveri);
-gazdegeri=gaz();
-nemdegeri=topraknem();
-sicaklikdegeri=sicaklik();
-mesafedegeri=mesafeolc();
-lcdyaz(gazdegeri,nemdegeri,mesafedegeri,sicaklikdegeri,btgelenveri);   
-
-
-if(gazdegeri>300){
-  buzzer(50);
-}
-if(mesafedegeri<6){
-  buzzer(50);
-}
-if(nemdegeri<600){
-    digitalWrite(mileri,1);
-    digitalWrite(mgeri,0);
-
-}
-else{
-   digitalWrite(mileri,0);
-  digitalWrite(mgeri,0);
-
-}
-
-
-//Serial.print(gazdegeri);//çoklu veri için
-//Serial.print("*");
-//Serial.print(nemdegeri);
-//Serial.print("*");
-//Serial.print(sicaklikdegeri);
-//Serial.print("*");
-//Serial.println(mesafedegeri);
-
-}*/
 
 //Uygulama ile haberleşme, uygulamadaki harflere ascii tablosunda karşılık gelen decimal sayılar yardımıyla sağlandı. Haberleşme ile gelen verilere göre  kontrol yapılır.
 int bluetoothkontrol(int btgelen)
