@@ -250,7 +250,7 @@ void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bl
  
  if(bluetoothveri==87)   //İf komutu bluetooth verisini kontrol eder. Eğer bluetooth verisi 87 değerine eşit ise;
  {
-    if(nemverisi<1000)   // Eğer nemverisi 1000 değerinden küçük ise; 
+    if(nemverisi>400)    // Eğer nemverisi 400 değerinden büyük ise; 
     { 
     lcd.setCursor(10,1); // 10. sütun, 1. satıra ekran imlecini ayarlar. 
     lcd.print(" ");      // 10. sütun, 1. satırda ekrana “ ” yazar. 
@@ -258,8 +258,8 @@ void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bl
     lcd.print(" ");      // 11.sütun, 1. satırda ekrana “ “ yazar.
     }   
    
-   //Eğer nemverisi 1000 değerinden büyük ise;
-     lcd.setCursor(7,0);  // 7. sütun, 0 .satıra ekran imlecini ayarlar.  
+   //Eğer nemverisi 400 değerinden küçük ise;
+    lcd.setCursor(7,0);  // 7. sütun, 0 .satıra ekran imlecini ayarlar.  
     lcd.print("NEM");     // 7. sütun, 0. satırda ekrana “ NEM ” yazar. 
     lcd.setCursor(7,1);
     lcd.print(nemverisi); // ekrana DHT11 sensöründen aldığı nemverisi yazar. 
