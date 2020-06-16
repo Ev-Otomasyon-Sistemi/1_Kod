@@ -80,6 +80,45 @@ void loop() /*Arduino'nun yapması gereken işlemler buraya yazılır*/
   if(Serial.available() > 0){     
       btgelenveri = Serial.read();   
     }
+   
+bluetoothkontrol(btgelenveri);
+gazdegeri=gaz();
+nemdegeri=topraknem();
+sicaklikdegeri=sicaklik();
+mesafedegeri=mesafeolc();
+lcdyaz(gazdegeri,nemdegeri,mesafedegeri,sicaklikdegeri,btgelenveri);   /*lcd ekranaa yazılacakalr*/
+
+
+//gaz değeri kontrol ediliyor gelen büykse alarm sistemi
+if(gazdegeri>300){
+  buzzer(50);
+}
+//mesafe  değeri kontrol ediliyor gelen büykse alarm sistemi
+if(mesafedegeri<6){
+  buzzer(50);
+}
+/*nem değeirne göre sulama işlemi yapıyor*/
+if(nemdegeri<600){ 
+    digitalWrite(mileri,1);
+    digitalWrite(mgeri,0);
+}
+
+else{
+   digitalWrite(mileri,0);
+  digitalWrite(mgeri,0);
+
+}
+
+
+Serial.print(gazdegeri);//çoklu veri için
+Serial.print("*");
+Serial.print(nemdegeri);
+Serial.print("*");
+Serial.print(sicaklikdegeri);
+Serial.print("*");
+Serial.println(mesafedegeri);
+Serial.print("*");
+delay(5000);
 
 //Uygulama ile haberleşme, uygulamadaki harflere ascii tablosunda karşılık gelen decimal sayılar yardımıyla sağlandı. Haberleşme ile gelen verilere göre  kontrol yapılır.
 int bluetoothkontrol(int btgelen)
