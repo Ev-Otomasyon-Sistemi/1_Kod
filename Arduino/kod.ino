@@ -2,7 +2,7 @@
 //Yazan,Test Eden,Hata Ayıklayan: Esra YÜCE, Feyza YILMAZ, Halil SEÇİLMİŞ, Özlem ÖZKAYA
 
 
-#include <Wire.h>                        //bağlantı fonksiyonlarını bulundurur.
+#include <Wire.h>                        // bağlantı fonksiyonlarını bulundurur.
 #include <LiquidCrystal_I2C.h>           // LCD ekran çalışma ve bağlantısı.
 LiquidCrystal_I2C lcd(0x27, 16, 2);      // lcd'nin adresi ve kaça kaç lcd oldugu tanımlandı.
 
@@ -43,15 +43,16 @@ byte kapi,penc;
 
 
 
-void setup()                // Genel ayarlamlar yapıldı. 1 kere çalışır.
+void setup()                   // Genel ayarlamlar yapıldı. 1 kere çalışır.
 {
-  Serial.begin(9600);      // seri haberleşme hızı.
+  Serial.begin(9600);          // seri haberleşme hızı.
   
   //lcd boyutlarını ayarlanması.
-  lcd.begin();               // lcd hazırlandı.
-  lcd.backlight();           // arka plan ışığı ayarlandı.
- kapiservo.attach(A3);       // kapi için oluşturulan nesneyi A3 pinine takarak servo motorun kullanılması.
-  pencereservo.attach(A1 );  // perde için oluşturulan nesneyi A3 pinine takarak servo motorun kullanılması.
+  lcd.begin();                 // lcd hazırlandı.
+  lcd.backlight();             // arka plan ışığı ayarlandı.
+  
+  kapiservo.attach(A3);        // kapi için oluşturulan nesneyi A3 pinine takarak servo motorun kullanılması.
+  pencereservo.attach(A1 );    // perde için oluşturulan nesneyi A3 pinine takarak servo motorun kullanılması.
   
     //ledler için tanımlalan pinler çıkış olarak ayarlandı.
   pinMode(latchPin, OUTPUT);   
@@ -71,15 +72,16 @@ void setup()                // Genel ayarlamlar yapıldı. 1 kere çalışır.
     lcd.print("EV");          // lcd'ye metin yazdırma işlemi.
     lcd.setCursor(3,1);
     lcd.print("OTOMASYONU");
-      delay(3000);           // bekletme saniyesi. 3 saniye.
-    lcd.clear();             // lcd ekranı tezmiler. 
+      delay(3000);            // bekletme saniyesi. 3 saniye.
+    lcd.clear();              // lcd ekranı tezmiler. 
     
 }
  
 void loop()                  // Arduino'nun yapması gereken işlemler buraya yazılır.
 
 {
-  if(Serial.available() > 0){     
+  if(Serial.available() > 0)
+    {     
       btgelenveri = Serial.read();   
     }
    
@@ -88,6 +90,7 @@ gazdegeri=gaz();
 nemdegeri=topraknem();
 sicaklikdegeri=sicaklik();
 mesafedegeri=mesafeolc();
+  
 lcdyaz(gazdegeri,nemdegeri,mesafedegeri,sicaklikdegeri,btgelenveri);   // lcd ekrana yazılacakalar.
 
 
@@ -104,7 +107,7 @@ if(mesafedegeri<6)
 }
   
 // nem değerine göre sulama işlemi yapıyor.
-if(nemdegeri<600)
+if(nemdegeri>400)
 { 
     digitalWrite(mileri,1);
     digitalWrite(mgeri,0);
