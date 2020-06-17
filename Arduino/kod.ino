@@ -339,13 +339,13 @@ void motor(int msure)
   
   if(sayac>msure)            // Eğer sayaç değeri motor süresinden büyükse
     {
-    digitalWrite(mileri,0);  // motor ileri pini logıc 0 ve motor geri pini logic 0 yapılır. 
+    digitalWrite(mileri,0);  // motor ileri pini logic 0 ve motor geri pini logic 0 yapılır. 
     digitalWrite(mgeri,0);
     }
   
   else                       // Sayaç değeri motor süresinden küçükse;
     {
-    digitalWrite(mileri,0);  // motor ileri pini logic 0 ve motor geri pini logıc 1 yapılır.
+    digitalWrite(mileri,0);  // motor ileri pini logic 0 ve motor geri pini logic 1 yapılır.
     digitalWrite(mgeri,1);
     }
  }
@@ -353,12 +353,12 @@ void motor(int msure)
 int topraknem()
 {
   int nemdeger=analogRead(A2);   // Toprak nem sensöründen okunan analog değer nemdeger isimli değişkene aktarılır.
-   return nemdeger;              //Sonuç olarak sensörden aldığı nemdegeri döndürür.
+   return nemdeger;              // Sonuç olarak sensörden aldığı nemdegeri döndürür.
 }
 void buzzer(int ton)
 {
-  digitalWrite(buzzerpin,1);    // buzzerpin pini logıc 1 yapılır. Delay(ton) fonksiyonu sayesinde buzzer ses çıkartır. 
+  digitalWrite(buzzerpin,1);    // buzzerpin logic 1 yapılır. Delay(ton) fonksiyonu sayesinde buzzer ses çıkartır. 
   delay(ton);
-  digitalWrite(buzzerpin,0);   // buzzerpin logıc 0 yapılır. Delay(ton) fonksiyonu sayesinde buzzer ses çıkartır. 
+  digitalWrite(buzzerpin,0);   // buzzerpin logic 0 yapılır. Delay(ton) fonksiyonu sayesinde buzzer ses çıkartır. 
   delay(ton);  
 }
