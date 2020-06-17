@@ -34,7 +34,7 @@ const byte clockPin = 5;   // Pin connected to Pin 11 of 74HC595 (Clock)
 int x = 0;                          
 int sayac=0,btgelen,btgelenveri,gazdegeri,nemdegeri,sicaklikdegeri,mesafedegeri,skontrol; // Kullanılıcak değişkenler tanımlandı.
 
-int buzzerpin=13; // buzzerın(alrm) takılı oluğu pin.
+int buzzerpin=13;     // buzzerın(alrm) takılı oluğu pin.
 
 
 byte led1,led2,led3,led4,led5,led6;
@@ -43,15 +43,17 @@ byte kapi,penc;
 
 
 
-void setup() /*Genel ayarlamlar yapıldı 1kere çalışır*/
+void setup()                // Genel ayarlamlar yapıldı. 1 kere çalışır.
 {
-  Serial.begin(9600);/*seri haberleşme hızı*/
-  /*lcd boyutlarını ayarlanması*/
-  lcd.begin(); //lcd hazırlandı
-  lcd.backlight(); // arka plan ışığı ayarlandı
- kapiservo.attach(A3);  // kapi için oluşturduğumuz nesneyi A3 pinine takarak servo motrunmuzu kulllanılamsı
-  pencereservo.attach(A1 );  // perde için oluşturduğumuz nesneyi A3 pinine takarak servo motrunmuzu kulllanılamsı
-    /*ledler için tanımlalan pinleri çıkış olarak ayarlandır*/
+  Serial.begin(9600);      // seri haberleşme hızı.
+  
+  //lcd boyutlarını ayarlanması.
+  lcd.begin();               // lcd hazırlandı.
+  lcd.backlight();           // arka plan ışığı ayarlandı.
+ kapiservo.attach(A3);       // kapi için oluşturulan nesneyi A3 pinine takarak servo motorun kullanılması.
+  pencereservo.attach(A1 );  // perde için oluşturulan nesneyi A3 pinine takarak servo motorun kullanılması.
+  
+    //ledler için tanımlalan pinler çıkış olarak ayarlandı.
   pinMode(latchPin, OUTPUT);   
   pinMode(clockPin, OUTPUT);
   pinMode(dataPin, OUTPUT);
@@ -65,16 +67,16 @@ void setup() /*Genel ayarlamlar yapıldı 1kere çalışır*/
 
 
 
-    lcd.setCursor(7,0); // //yazının lcd ekrandaki konumu belirlendi
-    lcd.print("EV"); //lcd yi metin yazdırma işlemi
+    lcd.setCursor(7,0);       // yazının lcd ekrandaki konumu belirlendi.
+    lcd.print("EV");          // lcd'ye metin yazdırma işlemi.
     lcd.setCursor(3,1);
     lcd.print("OTOMASYONU");
-      delay(3000); //bekletem saniyesi 3 saniye
-    lcd.clear(); //lcd tezmiler ekranı
+      delay(3000);           // bekletme saniyesi. 3 saniye.
+    lcd.clear();             // lcd ekranı tezmiler. 
     
 }
  
-void loop() /*Arduino'nun yapması gereken işlemler buraya yazılır*/
+void loop()                  // Arduino'nun yapması gereken işlemler buraya yazılır.
 
 {
   if(Serial.available() > 0){     
@@ -86,31 +88,36 @@ gazdegeri=gaz();
 nemdegeri=topraknem();
 sicaklikdegeri=sicaklik();
 mesafedegeri=mesafeolc();
-lcdyaz(gazdegeri,nemdegeri,mesafedegeri,sicaklikdegeri,btgelenveri);   /*lcd ekranaa yazılacakalr*/
+lcdyaz(gazdegeri,nemdegeri,mesafedegeri,sicaklikdegeri,btgelenveri);   // lcd ekrana yazılacakalar.
 
 
-//gaz değeri kontrol ediliyor gelen büykse alarm sistemi
-if(gazdegeri>300){
+// gaz değeri kontrol ediliyor. Gelen değer büyükse alarm sistemi devreye girer.
+if(gazdegeri>300)
+{
   buzzer(50);
 }
-//mesafe  değeri kontrol ediliyor gelen büykse alarm sistemi
-if(mesafedegeri<6){
+  
+// mesafe  değeri kontrol ediliyor. Gelen büyükse alarm sistemi devreye girer.
+if(mesafedegeri<6)
+{
   buzzer(50);
 }
-/*nem değeirne göre sulama işlemi yapıyor*/
-if(nemdegeri<600){ 
+  
+// nem değerine göre sulama işlemi yapıyor.
+if(nemdegeri<600)
+{ 
     digitalWrite(mileri,1);
     digitalWrite(mgeri,0);
 }
 
-else{
+else
+{
    digitalWrite(mileri,0);
-  digitalWrite(mgeri,0);
-
+   digitalWrite(mgeri,0);
 }
 
 
-Serial.print(gazdegeri);//çoklu veri için
+Serial.print(gazdegeri);      // çoklu veri için
 Serial.print("*");
 Serial.print(nemdegeri);
 Serial.print("*");
