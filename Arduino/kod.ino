@@ -7,22 +7,22 @@
 LiquidCrystal_I2C lcd(0x27, 16, 2);      // lcd'nin adresi ve kaça kaç lcd oldugu tanımlandı.
 
 
-#include "DHT.h"       //sıcaklık-nem sensörü bulunduran kütüphane.
+#include "DHT.h"       // sıcaklık-nem sensörü bulunduran kütüphane.
 #define DHTPIN 2       // sabit bir değişken olan DHT11PIN olarak Dijital 2"yi belirliyoruz.
 #define DHTTYPE DHT11 
 DHT evotomasyonu(DHTPIN, DHTTYPE);
 
-#include <Servo.h>   //servo motor kütüphanesi.
-Servo kapiservo;     //servo kütüphanesini kullancaklar.
+#include <Servo.h>   // servo motor kütüphanesi.
+Servo kapiservo;     // servo kütüphanesini kullancaklar.
 Servo pencereservo;
 
-const int mileri=9;     //motorun dönüşü.
+const int mileri=9;     // motorun dönüşü.
 const int mgeri=10;     // motorun dönüşü.
 
 const int pirPin = 8;   // Pır sensörünün takıldığı sabit pin.
 const int gazsensor=A0; // gaz sensörünün takıldığı sabit pin.
 
-/*Hareket sensörü için*/
+//Hareket sensörü için.
 const int trig = 3;     // Sensorun trig pini Arduinonun 3 numaralı ayağına bağlandı.
 const int echo = 4;     // Sensorun echo pini Arduinonun 4 numaralı ayağına bağlandı. 
 
@@ -47,14 +47,14 @@ void setup()                   // Genel ayarlamalar yapıldı. 1 kere çalışı
 {
   Serial.begin(9600);          // seri haberleşme hızı.
   
-  //lcd boyutlarını ayarlanması.
+  // lcd boyutlarını ayarlanması.
   lcd.begin();                 // lcd hazırlandı.
   lcd.backlight();             // arka plan ışığı ayarlandı.
   
   kapiservo.attach(A3);        // kapi için oluşturulan nesneyi A3 pinine takarak servo motorun kullanılması.
   pencereservo.attach(A1 );    // perde için oluşturulan nesneyi A3 pinine takarak servo motorun kullanılması.
   
-  //ledler için tanımlanan pinler çıkış olarak ayarlandı.
+  // ledler için tanımlanan pinler çıkış olarak ayarlandı.
   pinMode(latchPin, OUTPUT);   
   pinMode(clockPin, OUTPUT);
   pinMode(dataPin, OUTPUT);
@@ -130,53 +130,53 @@ Serial.println(mesafedegeri);
 Serial.print("*");
 delay(5000);
 
-//Uygulama ile haberleşme, uygulamadaki harflere ascii tablosunda karşılık gelen decimal sayılar yardımıyla sağlandı. Haberleşme ile gelen verilere göre  kontrol yapılır.
+// Uygulama ile haberleşme, uygulamadaki harflere ascii tablosunda karşılık gelen decimal sayılar yardımıyla sağlandı. Haberleşme ile gelen verilere göre  kontrol yapılır.
 int bluetoothkontrol(int btgelen)
 {
 
-    //SALON LED 
+    // SALON LED 
      if(btgelen==65)
     led1=1;
     if(btgelen==66)
     led1=0;
 
-  //ÇOCUK ODASI LED
+    // ÇOCUK ODASI LED
      if(btgelen==67)
     led2=1;
     if(btgelen==68)
     led2=0;
 
-  //YATAK ODASI LED
+    // YATAK ODASI LED
      if(btgelen==69)
     led3=1;
     if(btgelen==70)
     led3=0;
 
-  //MUTFAK LED
+    // MUTFAK LED
      if(btgelen==71)
     led4=1;
     if(btgelen==72)
     led4=0;
 
-  //KORİDOR LED
+    // KORİDOR LED
      if(btgelen==73)
     led5=1;
     if(btgelen==74)
     led5=0;
   
-  //BAHÇE LED
+    // BAHÇE LED
      if(btgelen==75)
     led6=1;
     if(btgelen==76)
     led6=0;
 
-  //KAPI
+   // KAPI
     if(btgelen==77)
     kapi=0;
     if(btgelen==78)
     kapi=45;
 
-  //PENCERE
+   // PENCERE
     if(btgelen==80)
     penc=45;
     if(btgelen==82)
@@ -216,7 +216,7 @@ int led(byte a,byte b,byte c,byte d,byte e,byte f)
     digitalWrite(latchPin, 1);      // 8 bitli dizi çıkışa verilir.
 }
 
-void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bluetoothveri)   //Lcd ekranına yazı yazmak için lcdyaz adında bir fonksiyon tanımlandı.
+void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bluetoothveri)   // Lcd ekranına yazı yazmak için lcdyaz adında bir fonksiyon tanımlandı.
 
 {
 
@@ -246,7 +246,7 @@ void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bl
     lcd.setCursor(9,1);   // 9. sütun, 1. satıra ekran imlecini ayarlar. 
     lcd.print(" ");       // 9. sütun, 1. satırda ekrana “ “ yazar.
      }  
-   //Eğer hiçbiri değil ise; 
+   // Eğer hiçbiri değil ise; 
     lcd.setCursor(7,0);      // 7. sütun, 0. satıra ekran imlecini ayarlar.  
     lcd.print("MES");        // 7. sütun, 0. satırda ekrana “ MES ” yazar.
     lcd.setCursor(7,1);      // 7. sütun, 1. satıra ekran imlecini ayarlar. 
@@ -263,7 +263,7 @@ void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bl
     lcd.print(" ");      // 10. sütun, 1. satırda ekrana “ “ yazar.
     } 
    
-   //Eğer gazverisi 100 değerinden büyük ise; 
+   // Eğer gazverisi 100 değerinden büyük ise; 
     lcd.setCursor(7,0);  // 7. sütun, 0. satıra ekran imlecini ayarlar.  
     lcd.print("GAZ");    // 7. sütun, 0. satırda ekrana “ GAZ ” yazar.
     lcd.setCursor(7,1);  // 7. sütun, 1. satıra ekran imlecini ayarlar. 
@@ -281,11 +281,11 @@ void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bl
     lcd.print(" ");      // 11. sütun, 1. satırda ekrana “ “ yazar.
     }   
    
-   //Eğer nemverisi 400 değerinden küçük ise;
+   // Eğer nemverisi 400 değerinden küçük ise;
     lcd.setCursor(7,0);   // 7. sütun, 0. satıra ekran imlecini ayarlar.  
     lcd.print("NEM");     // 7. sütun, 0. satırda ekrana “ NEM ” yazar. 
     lcd.setCursor(7,1);
-    lcd.print(nemverisi); // ekrana DHT11 sensöründen aldığı nemverisi yazar. 
+    lcd.print(nemverisi); // Ekrana DHT11 sensöründen aldığı nemverisi yazar. 
  }
 
 }
@@ -366,6 +366,6 @@ void buzzer(int ton)
 {
   digitalWrite(buzzerpin,1);    // buzzerpin logic 1 yapılır. Delay(ton) fonksiyonu sayesinde buzzer ses çıkartır. 
   delay(ton);
-  digitalWrite(buzzerpin,0);   // buzzerpin logic 0 yapılır. Delay(ton) fonksiyonu sayesinde buzzer ses çıkartır. 
+  digitalWrite(buzzerpin,0);    // buzzerpin logic 0 yapılır. Delay(ton) fonksiyonu sayesinde buzzer ses çıkartır. 
   delay(ton);  
 }
