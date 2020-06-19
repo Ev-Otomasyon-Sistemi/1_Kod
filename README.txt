@@ -23,10 +23,10 @@ Mobil uygulama ile sistemin haberleşme hızı Serial.begin() yardımı ile beli
 
 --------------------------------------------------------------------------------------------------------------------------------------
 Iriun Webcam programı aracılığı ile kamera sistemine bağlanılır.
-Setup1 dosyası içinden Debug klasöründe->Setup1.msi tıklayın ve kurlum başlatın
+Setup1 dosyası içinden Debug klasöründe-> Setup1.msi tıklayın ve kurlum başlatın
 Bilgisayarın sunucu adını değiştiriniz.
 Kurulacak bilgisayarın veri tabanı kurullumu için
 1. SQL server'a girin 
 2. Database klasörüne Attach yapın. 
 3. Yapılandırı ve Add seçeneğine tıklayın.
-4. Seçilen dosyayı veri tabanına ekleyin. (db klasörü içinde (arduino_veri) ).
+4. Seçilen dosyayı veri tabanına ekleyin. (db klasörü içinde (arduino_veri)).
