@@ -24,7 +24,7 @@ const int gazsensor=A0; // gaz sensörünün takıldığı sabit pin.
 
 /*Hareket sensörü için*/
 const int trig = 3;     // Sensorun trig pini Arduinonun 3 numaralı ayağına bağlandı.
-const int echo = 4;     // Sensorun echo pini Arduinonun 4 numaralı ayağına bağlandı.
+const int echo = 4;     // Sensorun echo pini Arduinonun 4 numaralı ayağına bağlandı. 
 
 // çoklu led kontrlolü ÇIKIŞ PİNLERİ
 
@@ -43,7 +43,7 @@ byte kapi,penc;
 
 
 
-void setup()                   // Genel ayarlamlar yapıldı. 1 kere çalışır.
+void setup()                   // Genel ayarlamalar yapıldı. 1 kere çalışır.
 {
   Serial.begin(9600);          // seri haberleşme hızı.
   
@@ -54,7 +54,7 @@ void setup()                   // Genel ayarlamlar yapıldı. 1 kere çalışır
   kapiservo.attach(A3);        // kapi için oluşturulan nesneyi A3 pinine takarak servo motorun kullanılması.
   pencereservo.attach(A1 );    // perde için oluşturulan nesneyi A3 pinine takarak servo motorun kullanılması.
   
-    //ledler için tanımlalan pinler çıkış olarak ayarlandı.
+  //ledler için tanımlanan pinler çıkış olarak ayarlandı.
   pinMode(latchPin, OUTPUT);   
   pinMode(clockPin, OUTPUT);
   pinMode(dataPin, OUTPUT);
@@ -100,7 +100,7 @@ if(gazdegeri>300)
   buzzer(50);
 }
   
-// mesafe  değeri kontrol ediliyor. Gelen büyükse alarm sistemi devreye girer.
+// mesafe  değeri kontrol ediliyor. Gelen değer küçükse alarm sistemi devreye girer.
 if(mesafedegeri<6)
 {
   buzzer(50);
@@ -134,42 +134,49 @@ delay(5000);
 int bluetoothkontrol(int btgelen)
 {
 
-  
+    //SALON LED 
      if(btgelen==65)
     led1=1;
     if(btgelen==66)
     led1=0;
 
+  //ÇOCUK ODASI LED
      if(btgelen==67)
     led2=1;
     if(btgelen==68)
     led2=0;
 
+  //YATAK ODASI LED
      if(btgelen==69)
     led3=1;
     if(btgelen==70)
     led3=0;
 
+  //MUTFAK LED
      if(btgelen==71)
     led4=1;
     if(btgelen==72)
     led4=0;
 
+  //KORİDOR LED
      if(btgelen==73)
     led5=1;
     if(btgelen==74)
     led5=0;
-
+  
+  //BAHÇE LED
      if(btgelen==75)
     led6=1;
     if(btgelen==76)
     led6=0;
 
+  //KAPI
     if(btgelen==77)
     kapi=0;
     if(btgelen==78)
     kapi=45;
 
+  //PENCERE
     if(btgelen==80)
     penc=45;
     if(btgelen==82)
@@ -192,7 +199,7 @@ int bluetoothkontrol(int btgelen)
  
 }
 
-// çoklu ledler bir diziye kayıt edildi. bu durum for döngüsünde kolaylık sağlayacak.
+// Çoklu ledler bir diziye kayıt edildi. Bu durum for döngüsünde kolaylık sağlayacak.
 
 int led(byte a,byte b,byte c,byte d,byte e,byte f)
 {
@@ -201,9 +208,9 @@ int led(byte a,byte b,byte c,byte d,byte e,byte f)
  
   for (int i = 0 ; i < 8 ; i++)     
     {
-    x = dizi[i];                    // for dönügü boyunca dizinin i. değeri x'e atanır.
+    x = dizi[i];                    // For dönügü boyunca dizinin i. değeri x'e atanır.
     digitalWrite(dataPin, x);       // datapin'e x değeri verilir.
-    digitalWrite(clockPin, 1);      // saat darbesi ile yazma ve kaydırma işlemi yapılır.
+    digitalWrite(clockPin, 1);      // Saat darbesi ile yazma ve kaydırma işlemi yapılır.
     digitalWrite(clockPin, 0);
     }
     digitalWrite(latchPin, 1);      // 8 bitli dizi çıkışa verilir.
@@ -215,12 +222,12 @@ void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bl
 
  if(bluetoothveri==90)          // İf komutu bluetooth verisini kontrol eder. Eğer bluetooth verisi 90(sıcaklığı göster anlamına gelir) değerine eşit ise; 
   {
-    lcd.setCursor(7,0);         // hangi satırda hangi sutunda olacağını belirtir. 7. sütun, 0.satıra ekran imlecini ayarlar.  
-    lcd.print("SIC");           // 7.sütun, 0. satıritibariyle ekrana “SIC” yazar.
+    lcd.setCursor(7,0);         // Hangi satırda hangi sutunda olacağını belirtir. 7. sütun, 0.satıra ekran imlecini ayarlar.  
+    lcd.print("SIC");           // 7. sütun, 0. satıritibariyle ekrana “SIC” yazar.
     lcd.setCursor(9,1);         // 9. sütun, 1. satıra ekran imlecini ayarlar.  
-    lcd.print(" ");             // 9.sütun, 1. satırda ekrana “ ” yazar.
+    lcd.print(" ");             // 9. sütun, 1. satırda ekrana “ ” yazar.
     lcd.setCursor(7,1);         // 7. sütun, 1. satıra ekran imlecini ayarlar. 
-    lcd.print(sicaklikverisi);  // 7.sütun, 1. satırda ekrana DHT11 sensöründen aldığı sicaklikverisi’ni yazar.
+    lcd.print(sicaklikverisi);  // 7. sütun, 1. satırda ekrana DHT11 sensöründen aldığı sicaklikverisi’ni yazar.
   }
  
  if(bluetoothveri==79)   // İf komutu bluetooth verisini kontrol eder. Eğer bluetooth verisi 79 değerine eşit ise;  
@@ -228,20 +235,20 @@ void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bl
     if(mesafeverisi<100) // Eğer mesafeverisi 100 değerinden küçük ise
       {
     lcd.setCursor(9,1);  // 9. sütun, 1. satıra ekran imlecini ayarlar. 
-    lcd.print(" ");      // 9.sütun, 1. satırda ekrana “ ” yazar. 
+    lcd.print(" ");      // 9. sütun, 1. satırda ekrana “ ” yazar. 
     lcd.setCursor(10,1); // 10. sütun, 1. satıra ekran imlecini ayarlar. 
-    lcd.print(" ");      // 10.sütun, 1. satırda ekrana “ “ yazar. 
+    lcd.print(" ");      // 10. sütun, 1. satırda ekrana “ “ yazar. 
      }
    if(mesafeverisi<10)    // Eğer mesafeverisi 10 değerinden küçük ise; 
      {
     lcd.setCursor(8,1);   // 8. sütun, 1. satıra ekran imlecini ayarlar. 
-    lcd.print(" ");       // 8.sütun, 1. satırda ekrana “ ” yazar. 
+    lcd.print(" ");       // 8. sütun, 1. satırda ekrana “ ” yazar. 
     lcd.setCursor(9,1);   // 9. sütun, 1. satıra ekran imlecini ayarlar. 
     lcd.print(" ");       // 9. sütun, 1. satırda ekrana “ “ yazar.
      }  
    //Eğer hiçbiri değil ise; 
     lcd.setCursor(7,0);      // 7. sütun, 0. satıra ekran imlecini ayarlar.  
-    lcd.print("MES");        // 7. sütun, 0.satırda ekrana “ MES ” yazar.
+    lcd.print("MES");        // 7. sütun, 0. satırda ekrana “ MES ” yazar.
     lcd.setCursor(7,1);      // 7. sütun, 1. satıra ekran imlecini ayarlar. 
     lcd.print(mesafeverisi); // 7. sütun, 1. satırda ekrana HC-SR04 sensöründen aldığı mesafeverisi yazar. 
  }
@@ -253,29 +260,29 @@ void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bl
     lcd.setCursor(9,1);  // 9. sütun, 1. satıra ekran imlecini ayarlar.  
     lcd.print(" ");      // 9. sütun, 1. satırda ekrana “ ” yazar.
     lcd.setCursor(10,1); // 10. sütun, 1. satıra ekran imlecini ayarlar. 
-    lcd.print(" ");      // 10. sütun, 1.satırda ekrana “ “ yazar.
+    lcd.print(" ");      // 10. sütun, 1. satırda ekrana “ “ yazar.
     } 
    
    //Eğer gazverisi 100 değerinden büyük ise; 
     lcd.setCursor(7,0);  // 7. sütun, 0. satıra ekran imlecini ayarlar.  
-    lcd.print("GAZ");    // 7.sütun, 0. satırda ekrana “ GAZ ” yazar.
+    lcd.print("GAZ");    // 7. sütun, 0. satırda ekrana “ GAZ ” yazar.
     lcd.setCursor(7,1);  // 7. sütun, 1. satıra ekran imlecini ayarlar. 
-    lcd.print(gazveri);  // 7.sutun, 1.satırda ekrana MQ-2 sensöründen aldığı gazverisi yazar. 
+    lcd.print(gazveri);  // 7. sutun, 1. satırda ekrana MQ-2 sensöründen aldığı gazverisi yazar. 
   
  }
  
- if(bluetoothveri==87)   //İf komutu bluetooth verisini kontrol eder. Eğer bluetooth verisi 87 değerine eşit ise;
+ if(bluetoothveri==87)   // İf komutu bluetooth verisini kontrol eder. Eğer bluetooth verisi 87 değerine eşit ise;
  {
     if(nemverisi>400)    // Eğer nemverisi 400 değerinden büyük ise; 
     { 
     lcd.setCursor(10,1); // 10. sütun, 1. satıra ekran imlecini ayarlar. 
     lcd.print(" ");      // 10. sütun, 1. satırda ekrana “ ” yazar. 
     lcd.setCursor(11,1); // 11. sütun, 1. satıra ekran imlecini ayarlar.  
-    lcd.print(" ");      // 11.sütun, 1. satırda ekrana “ “ yazar.
+    lcd.print(" ");      // 11. sütun, 1. satırda ekrana “ “ yazar.
     }   
    
    //Eğer nemverisi 400 değerinden küçük ise;
-    lcd.setCursor(7,0);  // 7. sütun, 0 .satıra ekran imlecini ayarlar.  
+    lcd.setCursor(7,0);   // 7. sütun, 0. satıra ekran imlecini ayarlar.  
     lcd.print("NEM");     // 7. sütun, 0. satırda ekrana “ NEM ” yazar. 
     lcd.setCursor(7,1);
     lcd.print(nemverisi); // ekrana DHT11 sensöründen aldığı nemverisi yazar. 
@@ -283,10 +290,10 @@ void lcdyaz(int gazveri,int nemverisi,int mesafeverisi,int sicaklikverisi,int bl
 
 }
 
-int gaz()           //Gaz'ın çıkış pininden bir değer okunur ve o değer return olarak ana fonksiyona döndürülür. 
+int gaz()           // Gaz'ın çıkış pininden bir değer okunur ve o değer return olarak ana fonksiyona döndürülür. 
   {
   int gazdeger=analogRead(gazsensor);  // MQ-2 sensöründen okunan analog değer gazdeger isimli değişkene aktarılır. 
-  return gazdeger;                     //Sonuç olarak sensörden aldığı gazdegeri’ni return olarak ana fonksiyona döndürür ve ekrana yazdırılır.
+  return gazdeger;                     // Sonuç olarak sensörden aldığı gazdegeri’ni return olarak ana fonksiyona döndürür ve ekrana yazdırılır.
   }
 
 int mesafeolc()
