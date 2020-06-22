@@ -18,7 +18,8 @@ Kullanıcı adı: halil    Şifre: H123
 Kullanıcı adı: özlem    Şifre: O123
 
 ----------------------------------------------------------Arduino---------------------------------------------------------------------
-İndirilen kod dosyası Arduino ide'de açılır ve sistem için gerekli kütüphaneler (“<Wire.h>, <LiquidCrystal_I2C.h>, <Servo.h>, "DHT.h”) dahil edilir. Derlenen kod arduino uno arabirimine yüklenir. 
+İndirilen kod dosyası Arduino ide'de açılır ve sistem için gerekli kütüphaneler (“<Wire.h>, <LiquidCrystal_I2C.h>, <Servo.h>, "DHT.h”) dahil edilir. 
+Derlenen kod arduino uno arabirimine yüklenir. 
 Mobil uygulama ile sistemin haberleşme hızı Serial.begin() yardımı ile belirlenir . Mobil uygulamadan gelen veriler Serial.read() aktarılır ve mobil uygulamadaki değişken isimlerinin karşılıkları ASCII tablosu yardımı ile sisteme entegre edilir. Ayrıca açma kapama işlemleri “0: kapat,1: aç” şeklinde yapılır.
 
 --------------------------------------------------------------------------------------------------------------------------------------
